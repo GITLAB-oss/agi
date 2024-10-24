@@ -1,4 +1,248 @@
-🤖🤖🤖🤖🤖🤖# agi  
+🤖🤖🤖🤖🤖🤖# agi   
+class KnowledgeGraph:
+    def __init__(self):
+        self.knowledge = {}
+
+    def add_knowledge(self, subject, facts):
+        self.knowledge[subject] = facts
+
+    def reflect(self):
+        return f"Current Knowledge: {self.knowledge}"
+2. Emotional Intelligence
+Deep Learning for Emotion Recognition
+
+Using a simple model for sentiment analysis with the transformers library.
+
+python
+Copy code
+from transformers import pipeline
+
+class EmotionRecognition:
+    def __init__(self):
+        self.sentiment_analyzer = pipeline("sentiment-analysis")
+
+    def analyze_sentiment(self, text):
+        result = self.sentiment_analyzer(text)
+        return result[0]['label'], result[0]['score']  # Returns sentiment and confidence score
+3. Adaptive Learning
+Reinforcement Learning Example
+
+Using gym for reinforcement learning.
+
+python
+Copy code
+import gym
+
+class AdaptiveLearning:
+    def __init__(self, environment):
+        self.env = gym.make(environment)
+        self.state = self.env.reset()
+
+    def learn(self):
+        # A simple loop for reinforcement learning
+        for _ in range(1000):  # Number of episodes
+            action = self.env.action_space.sample()  # Random action
+            self.state, reward, done, _ = self.env.step(action)
+            if done:
+                self.state = self.env.reset()
+4. Moral and Ethical Reasoning
+Ethical Decision Frameworks
+
+A simple rule-based ethical reasoning implementation.
+
+python
+Copy code
+class EthicalReasoning:
+    def evaluate_action(self, action):
+        ethical_rules = {
+            "help": "Ethically Positive",
+            "donate": "Ethically Positive",
+            "harm": "Ethically Negative",
+            "steal": "Ethically Negative"
+        }
+        return ethical_rules.get(action, "Neutral")
+5. Reasoning and Problem Solving
+Logic Programming Example
+
+Using pyswip for simple logical reasoning.
+
+python
+Copy code
+from pyswip import Prolog
+
+class Reasoning:
+    def __init__(self):
+        self.prolog = Prolog()
+        self.prolog.assertz("father(abraham, isaac)")
+        self.prolog.assertz("father(isaac, jacob)")
+
+    def query_father(self, child):
+        return list(self.prolog.query(f"father(X, {child})"))
+6. Communication Skills
+Dialogue Management System Example
+
+Using a basic random response generator.
+
+python
+Copy code
+import random
+
+class Chatbot:
+    def __init__(self):
+        self.responses = [
+            "That's interesting!",
+            "Can you tell me more?",
+            "I see what you mean.",
+            "Let's explore that idea."
+        ]
+
+    def respond(self, user_input):
+        return random.choice(self.responses)
+7. Social Skills
+Simulated Social Interactions
+
+Basic greetings and farewells.
+
+python
+Copy code
+class SocialInteraction:
+    def greet(self, name):
+        return f"Hello, {name}! How can I assist you today?"
+
+    def farewell(self):
+        return "Goodbye! Have a great day!"
+8. Goal Setting and Motivation
+Dynamic Goal Adjustment
+
+A simple goal-setting framework with flexibility.
+
+python
+Copy code
+class GoalManagement:
+    def __init__(self):
+        self.goals = []
+
+    def set_goal(self, goal):
+        self.goals.append(goal)
+        return f"Goal '{goal}' has been set!"
+
+    def adjust_goal(self, old_goal, new_goal):
+        if old_goal in self.goals:
+            self.goals[self.goals.index(old_goal)] = new_goal
+            return f"Goal '{old_goal}' has been changed to '{new_goal}'"
+        return "Goal not found."
+
+    def show_goals(self):
+        return self.goals
+9. Memory Management
+Hierarchical Memory Structures
+
+Implementing simple episodic memory.
+
+python
+Copy code
+class Memory:
+    def __init__(self):
+        self.experiences = []
+
+    def store_experience(self, experience):
+        self.experiences.append(experience)
+
+    def recall_experience(self):
+        return self.experiences[-1] if self.experiences else "No memories stored."
+10. Meta-cognition
+Performance Analytics
+
+A simple performance evaluator.
+
+python
+Copy code
+class MetaCognition:
+    def __init__(self):
+        self.performance_history = []
+
+    def evaluate_performance(self, success_rate):
+        self.performance_history.append(success_rate)
+        if success_rate < 0.5:
+            return "Needs Improvement"
+        else:
+            return "Performance Acceptable"
+11. Environmental Awareness
+Sensor Integration
+
+Simulated sensor data processing.
+
+python
+Copy code
+class EnvironmentalAwareness:
+    def __init__(self):
+        self.environment_data = {}
+
+    def update_environment(self, sensor_data):
+        self.environment_data.update(sensor_data)
+
+    def get_environment_status(self):
+        return self.environment_data
+12. Cultural Awareness
+Cultural Context Modeling
+
+A simple way to adjust responses based on cultural input.
+
+python
+Copy code
+class CulturalAwareness:
+    def __init__(self):
+        self.culture_map = {
+            "US": "Hello!",
+            "France": "Bonjour!",
+            "Japan": "こんにちは",
+        }
+
+    def greet_based_on_culture(self, culture):
+        return self.culture_map.get(culture, "Hello!")
+13. Creativity
+Generative Models for Creativity
+
+Using a simple placeholder for creativity, such as generating random ideas.
+
+python
+Copy code
+import random
+
+class Creativity:
+    def generate_idea(self):
+        ideas = [
+            "Write a short story about a dragon.",
+            "Create a new recipe using chocolate.",
+            "Design a futuristic city."
+        ]
+        return random.choice(ideas)
+Integration Example
+Here’s how you might integrate these features into a simple AGI framework:
+
+python
+Copy code
+class EnhancedAGI:
+    def __init__(self):
+        self.memory = Memory()
+        self.goals = GoalManagement()
+        self.ethical_reasoning = EthicalReasoning()
+        self.emotion_recognition = EmotionRecognition()
+        self.culture_awareness = CulturalAwareness()
+        self.chatbot = Chatbot()
+
+    def interact(self, user_input, culture):
+        sentiment, confidence = self.emotion_recognition.analyze_sentiment(user_input)
+        greeting = self.culture_awareness.greet_based_on_culture(culture)
+        response = self.chatbot.respond(user_input)
+        return f"{greeting} I perceive your sentiment as {sentiment} ({confidence*100:.2f}%) and I say: {response}"
+
+    def learn_and_adapt(self, experience):
+        self.memory.store_experience(experience)
+
+    def set_and_show_goals(self, goal):
+        self.goals.set_goal(goal)
+        return self.goals.show_goals()
 class AGI:
     def __init__(self):
         self.state = {
