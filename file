@@ -1,0 +1,19 @@
+class EthicalFramework:
+    def __init__(self):
+        self.guidelines = []
+
+    def add_guideline(self, guideline):
+        self.guidelines.append(guideline)
+
+    def evaluate_decision(self, decision):
+        for guideline in self.guidelines:
+            if "harm" in decision and "Do not harm humans" in guideline:
+                return "Decision violates ethical guidelines."
+        return "Decision is ethically acceptable."
+
+# Example usage
+if __name__ == "__main__":
+    ethics = EthicalFramework()
+    ethics.add_guideline("Do not harm humans.")
+    result = ethics.evaluate_decision("Steal to save a life?")
+    print(result)
